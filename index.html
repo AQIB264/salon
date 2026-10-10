@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#0E0B14">
 <meta name="mobile-web-app-capable" content="yes">
-<title>Fashion Look</title>
+<title>Fade Lab</title>
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;700;800&family=Unbounded:wght@700;800&display=swap" rel="stylesheet">
 <style>
 :root{--bg:#0E0B14;--surface:#1A1424;--surface2:#251D33;--fg:#F7F2FB;--muted:#A99BBD;--line:#33283F;--pink:#FF4D97;--violet:#8A6BFF;--sun:#FFD84A;--on-pink:#14060E;--on-sun:#1B1500;--wa:#25D366;--on-wa:#04200E;--ok:#4BE3A0;--bad:#FF8A7A;--display:'Unbounded','Arial Black',system-ui,sans-serif;--body:'Manrope',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;color-scheme:dark}
@@ -101,10 +101,10 @@ input{width:100%;min-height:52px;padding:0 16px;border-radius:16px;border:1.5px 
 </style>
 </head>
 <body>
-<div id="splash"><div class="logo">FL</div><b>Fashion Look</b></div>
+<div id="splash"><div class="logo">FL</div><b>Fade Lab</b></div>
 
 <header class="appbar">
-  <div class="mark"><i>FL</i><span id="brand">Fashion Look</span></div>
+  <div class="mark"><i>FL</i><span id="brand">Fade Lab</span></div>
   <div class="status" id="status">Checking</div>
 </header>
 
@@ -112,7 +112,7 @@ input{width:100%;min-height:52px;padding:0 16px;border-radius:16px;border:1.5px 
   <section class="view on pad" id="v-home">
     <p class="greet" id="greet">Hey</p>
     <h1 class="big">Fresh cut.<br><span>Fresh you.</span></h1>
-    <div class="sticker">Open every day</div>
+    <div class="sticker">Open every day · Home service</div>
     <div class="ticker"><div id="ticker"></div></div>
     <div class="actions">
       <a class="act wa" id="actWa" href="#" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.2 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.2-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.8s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .5l-.4.6c-.2.2-.3.4-.1.7.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.3 2.4 1.5.3.1.5.1.6-.1l.9-1.1c.2-.3.4-.2.7-.1l2 1c.3.1.5.2.5.4.1.2.1.8-.1 1.4z"/></svg>WhatsApp</a>
@@ -132,6 +132,8 @@ input{width:100%;min-height:52px;padding:0 16px;border-radius:16px;border:1.5px 
   <section class="view pad" id="v-prices">
     <h2>Price list</h2>
     <p class="sub">Clear rates. No surprises at the counter.</p>
+    <div class="seg" id="modeSegP"></div>
+    <p class="hint" id="modeNote" style="text-align:left"></p>
     <div class="seg" id="seg"></div>
     <div id="svcList"></div>
   </section>
@@ -139,11 +141,14 @@ input{width:100%;min-height:52px;padding:0 16px;border-radius:16px;border:1.5px 
   <section class="view pad" id="v-book">
     <h2>Book your slot</h2>
     <p class="sub">Pick, tap, send. It lands straight in our WhatsApp.</p>
-    <div class="label">1. Service</div><div class="chips" id="svcChips"></div>
-    <div class="label">2. Day</div><div class="days" id="days"></div>
-    <div class="label">3. Time</div><div class="times" id="times"></div>
-    <div class="label">4. Your name</div>
+    <div class="label">1. Where</div><div class="chips" id="modeSegB"></div>
+    <div class="label">2. Service</div><div class="chips" id="svcChips"></div>
+    <div class="label">3. Day</div><div class="days" id="days"></div>
+    <div class="label">4. Time</div><div class="times" id="times"></div>
+    <div class="label">5. Your name</div>
     <input id="name" autocomplete="name" placeholder="e.g. Ali">
+    <div id="addrBox" hidden><div class="label">6. Your address / area</div>
+    <input id="addr" autocomplete="street-address" placeholder="Street, house number, landmark"></div>
     <div class="summary" id="summary"></div>
     <p class="err" id="err" role="alert"></p>
     <button class="cta" id="send" type="button"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.2 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.2-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.8s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .5l-.4.6c-.2.2-.3.4-.1.7.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.3 2.4 1.5.3.1.5.1.6-.1l.9-1.1c.2-.3.4-.2.7-.1l2 1c.3.1.5.2.5.4.1.2.1.8-.1 1.4z"/></svg>Send on WhatsApp</button>
@@ -169,16 +174,17 @@ input{width:100%;min-height:52px;padding:0 16px;border-radius:16px;border:1.5px 
 <script>
 /* ===== EDIT THIS BLOCK ONLY ===== */
 const SALON = {
-  name: "Fashion Look",
+  name: "Fade Lab",
   whatsapp: "923407242364",
   phoneDisplay: "0340 7242364",
-  address: "Fashion Look Salon, Pir Naseer Road",
+  address: "Fade Lab Salon, Pir Naseer Road, near Sufyan Milk Shop",
   mapsLink: "https://maps.app.goo.gl/aQ2gQsLAYvmLtoCx8",
   hoursText: "Every day, 9:00 am to 11:00 pm",
   openHour: 9,
   closeHour: 23,
   instagram: "",
-  currency: "Rs"
+  currency: "Rs",
+  homeMultiplier: 2
 };
 const SERVICES = [
   ["Hair","Haircut (cutting)","250"],
@@ -216,7 +222,7 @@ const money=n=>SALON.currency+" "+n.toLocaleString("en-US");
 const fmtH=h=>{const m=h%12||12;return m+":00 "+(h<12?"am":"pm")};
 const fmtT=m=>{const h=Math.floor(m/60),mm=m%60;return (h%12||12)+":"+String(mm).padStart(2,"0")+" "+(h<12?"am":"pm")};
 const phoneTel="+"+SALON.whatsapp;
-let state={cat:"All",svc:null,day:null,time:null};
+let state={cat:"All",mode:"shop",svc:null,day:null,time:null};
 
 function toast(t){const e=$("toast");e.textContent=t;e.classList.add("show");setTimeout(()=>e.classList.remove("show"),2200)}
 
@@ -247,15 +253,24 @@ function renderHome(){
   $("ticker").innerHTML=items.concat(items).map(t=>"<span>"+t+"</span>").join("");
   $("rail").innerHTML=SERVICES.slice(0,4).map((s,i)=>'<button class="hot g'+(i%4)+'" data-i="'+i+'"><small>'+s[0]+'</small><b>'+s[1]+'</b><em>'+SALON.currency+" "+s[2]+'</em></button>').join("");
   $("rail").querySelectorAll(".hot").forEach(b=>b.addEventListener("click",()=>{state.svc=+b.dataset.i;renderBook();go("book")}));
-  $("info").innerHTML='<dt>Hours</dt><dd>'+SALON.hoursText+'</dd><dt>Phone</dt><dd><a href="tel:'+phoneTel+'">'+SALON.phoneDisplay+'</a></dd><dt>Address</dt><dd><a href="'+SALON.mapsLink+'" target="_blank" rel="noopener">'+SALON.address+'</a></dd>';
+  $("info").innerHTML='<dt>Hours</dt><dd>'+SALON.hoursText+'</dd><dt>Home</dt><dd>Home service available ('+SALON.homeMultiplier+'x the salon rate)</dd><dt>Phone</dt><dd><a href="tel:'+phoneTel+'">'+SALON.phoneDisplay+'</a></dd><dt>Address</dt><dd><a href="'+SALON.mapsLink+'" target="_blank" rel="noopener">'+SALON.address+'</a></dd>';
   if(!window.matchMedia("(display-mode: standalone)").matches)$("install").hidden=false;
+}
+
+const mult=()=>state.mode==="home"?SALON.homeMultiplier:1;
+function renderMode(){
+  const opts=[["shop","At the salon"],["home","At home ("+SALON.homeMultiplier+"x)"]];
+  $("modeSegP").innerHTML=opts.map(o=>'<button class="pill" aria-pressed="'+(state.mode===o[0])+'" data-m="'+o[0]+'">'+o[1]+'</button>').join("");
+  $("modeSegB").innerHTML=opts.map(o=>'<button class="chip" aria-pressed="'+(state.mode===o[0])+'" data-m="'+o[0]+'">'+o[1]+'</button>').join("");
+  $("modeNote").textContent=state.mode==="home"?"Home service: we come to you, at "+SALON.homeMultiplier+"x the salon rate.":"Salon prices.";
+  document.querySelectorAll("#modeSegP .pill,#modeSegB .chip").forEach(b=>b.addEventListener("click",()=>{state.mode=b.dataset.m;renderMode();renderPrices();renderBook()}));
 }
 
 function renderPrices(){
   const cats=["All"].concat([...new Set(SERVICES.map(s=>s[0]))]);
   $("seg").innerHTML=cats.map(c=>'<button class="pill" aria-pressed="'+(c===state.cat)+'" data-c="'+c+'">'+c+'</button>').join("");
   $("seg").querySelectorAll(".pill").forEach(b=>b.addEventListener("click",()=>{state.cat=b.dataset.c;renderPrices()}));
-  $("svcList").innerHTML=SERVICES.map((s,i)=>({s,i})).filter(o=>state.cat==="All"||o.s[0]===state.cat).map(o=>'<div class="svc"><div class="dot g'+(o.i%4)+'">'+o.s[1][0]+'</div><div class="nm">'+o.s[1]+'<small>'+o.s[0]+'</small></div><div class="pr">'+SALON.currency+" "+o.s[2]+'</div><button data-i="'+o.i+'">Book</button></div>').join("");
+  $("svcList").innerHTML=SERVICES.map((s,i)=>({s,i})).filter(o=>state.cat==="All"||o.s[0]===state.cat).map(o=>'<div class="svc"><div class="dot g'+(o.i%4)+'">'+o.s[1][0]+'</div><div class="nm">'+o.s[1]+'<small>'+o.s[0]+'</small></div><div class="pr">'+money(num(o.s[2])*mult())+'</div><button data-i="'+o.i+'">Book</button></div>').join("");
   $("svcList").querySelectorAll("button").forEach(b=>b.addEventListener("click",()=>{state.svc=+b.dataset.i;renderBook();go("book")}));
 }
 
@@ -265,7 +280,8 @@ function days(){
   return out;
 }
 function renderBook(){
-  $("svcChips").innerHTML=SERVICES.map((s,i)=>'<button class="chip" aria-pressed="'+(state.svc===i)+'" data-i="'+i+'">'+s[1]+' <small>'+SALON.currency+" "+s[2]+'</small></button>').join("");
+  $("addrBox").hidden=state.mode!=="home";
+  $("svcChips").innerHTML=SERVICES.map((s,i)=>'<button class="chip" aria-pressed="'+(state.svc===i)+'" data-i="'+i+'">'+s[1]+' <small>'+money(num(s[2])*mult())+'</small></button>').join("");
   $("svcChips").querySelectorAll(".chip").forEach(b=>b.addEventListener("click",()=>{state.svc=+b.dataset.i;renderBook()}));
   const ds=days();
   if(state.day===null)state.day=0;
@@ -280,7 +296,7 @@ function renderBook(){
   $("times").innerHTML=t;
   $("times").querySelectorAll(".chip:not([disabled])").forEach(b=>b.addEventListener("click",()=>{state.time=+b.dataset.m;renderBook()}));
   const s=SERVICES[state.svc];
-  $("summary").innerHTML='<div class="row"><span>Service</span><span>'+(s?s[1]:"Not chosen")+'</span></div><div class="row"><span>Day</span><span>'+ds[state.day].toLocaleDateString("en-US",{weekday:"short",day:"numeric",month:"short"})+'</span></div><div class="row"><span>Time</span><span>'+(state.time!==null?fmtT(state.time):"Not chosen")+'</span></div><div class="row tot"><span>Total</span><span>'+(s?money(num(s[2])):"-")+'</span></div>';
+  $("summary").innerHTML='<div class="row"><span>Where</span><span>'+(state.mode==="home"?"At your home":"At the salon")+'</span></div><div class="row"><span>Service</span><span>'+(s?s[1]:"Not chosen")+'</span></div><div class="row"><span>Day</span><span>'+ds[state.day].toLocaleDateString("en-US",{weekday:"short",day:"numeric",month:"short"})+'</span></div><div class="row"><span>Time</span><span>'+(state.time!==null?fmtT(state.time):"Not chosen")+'</span></div><div class="row tot"><span>Total</span><span>'+(s?money(num(s[2])*mult()):"-")+'</span></div>';
 }
 $("send").addEventListener("click",()=>{
   const name=$("name").value.trim(),s=SERVICES[state.svc];
@@ -288,8 +304,10 @@ $("send").addEventListener("click",()=>{
   if(!s){err.textContent="Please choose a service.";return}
   if(state.time===null){err.textContent="Please choose a time.";return}
   if(!name){err.textContent="Please type your name.";return}
+  const addr=$("addr").value.trim();
+  if(state.mode==="home"&&!addr){err.textContent="Please type your address.";return}
   const d=days()[state.day].toLocaleDateString("en-US",{weekday:"long",day:"numeric",month:"long"});
-  const msg="Hi "+SALON.name+"! I want to book:\nService: "+s[1]+" ("+money(num(s[2]))+")\nDay: "+d+"\nTime: "+fmtT(state.time)+"\nName: "+name;
+  const msg="Hi "+SALON.name+"! I want to book:\nWhere: "+(state.mode==="home"?"At home (home service)":"At the salon")+"\nService: "+s[1]+" ("+money(num(s[2])*mult())+")\nDay: "+d+"\nTime: "+fmtT(state.time)+"\nName: "+name+(state.mode==="home"?"\nAddress: "+addr:"");
   window.open("https://wa.me/"+SALON.whatsapp+"?text="+encodeURIComponent(msg),"_blank");
   toast("Opening WhatsApp");
 });
@@ -300,7 +318,7 @@ function renderGallery(){
 }
 
 try{
-  renderHome();renderPrices();renderBook();renderGallery();renderStatus();
+  renderHome();renderMode();renderPrices();renderBook();renderGallery();renderStatus();
   setInterval(renderStatus,60000);
 }catch(e){
   document.getElementById("status").textContent="Error: "+e.message;
