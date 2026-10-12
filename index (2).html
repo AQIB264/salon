@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0D0D0F">
+<title>Dream Salon | Haircut, Shave &amp; Shape in Lahore</title>
+<meta name="description" content="Dream Salon, Pir Naseer Road, Chandia, Lahore. Open every day 9 AM to 11 PM.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Oswald:wght@500;700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0D0D0F;--panel:#17171B;--line:#2A2A31;--gold:#C9A24B;--cream:#F5EFE3;--mute:#A9A59B;--wa:#1FA855}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Poppins,"Segoe UI",Roboto,Arial,sans-serif;background:var(--bg);color:var(--cream);line-height:1.55;font-size:16px;padding-bottom:78px}
+a{color:inherit;text-decoration:none}
+h1,h2,h3{font-family:Oswald,Impact,sans-serif;font-weight:700;letter-spacing:.5px;line-height:1.1}
+.wrap{max-width:1040px;margin:0 auto;padding:0 16px}
+
+/* top bar */
+.top{position:sticky;top:0;z-index:20;background:rgba(13,13,15,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.top .wrap{display:flex;justify-content:space-between;align-items:center;height:62px}
+.logo{display:flex;align-items:center;gap:10px}
+.mark{position:relative;width:40px;height:40px;border-radius:50%;overflow:hidden;flex:none;background:var(--gold);display:grid;place-items:center;font-family:Anton,Impact,sans-serif;font-size:17px;color:#111;border:2px solid var(--gold)}
+.mark img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:1}
+.name{font-family:Anton,Impact,sans-serif;font-size:26px;letter-spacing:2px;line-height:1;color:var(--gold);text-transform:uppercase}
+.top nav{display:flex;gap:18px;font-size:14px;color:var(--mute)}
+@media(max-width:560px){.top nav{display:none}}
+
+/* hero: 4 photo collage */
+.hero{padding:18px 0 34px}
+.collage{display:grid;grid-template-columns:1.25fr 1fr;grid-template-rows:170px 120px 120px;gap:8px}
+.ph{position:relative;overflow:hidden;border-radius:14px;background:linear-gradient(145deg,#26212f,#4a3a1c)}
+.ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:1}
+.ph::after{content:attr(data-i);position:absolute;inset:0;display:grid;place-items:center;font-size:48px;z-index:0}
+.ph::before{content:attr(data-t);position:absolute;left:10px;bottom:8px;z-index:2;font-size:12px;font-weight:600;letter-spacing:1px;text-transform:uppercase;background:rgba(0,0,0,.6);padding:3px 9px;border-radius:20px}
+.c1{grid-row:span 3}
+.c2{grid-row:span 1}
+.c3,.c4{grid-row:span 1}
+@media(min-width:760px){.collage{grid-template-columns:1.3fr 1fr 1fr;grid-template-rows:200px 200px}.c1{grid-row:span 2}.c2{grid-column:span 2}}
+.hero h1{font-family:Anton,Impact,sans-serif;font-weight:400;font-size:58px;letter-spacing:1.5px;line-height:1.05;margin-top:22px;text-transform:uppercase}
+.hero h1 span{color:var(--gold)}
+.hero p{color:var(--mute);margin-top:10px;max-width:520px}
+.cta{display:flex;gap:10px;flex-wrap:wrap;margin-top:20px}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:13px 22px;border-radius:12px;font-weight:600;font-size:15px}
+.b1{background:var(--wa);color:#fff}.b2{background:var(--gold);color:#111}.b3{border:1px solid var(--line);color:var(--cream)}
+.facts{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:22px}
+.facts div{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:12px;text-align:center}
+.facts b{display:block;font-family:Oswald,sans-serif;font-size:20px;color:var(--gold)}
+.facts span{font-size:12px;color:var(--mute)}
+
+section{padding:40px 0}
+.h{font-size:32px;text-transform:uppercase}
+.sub{color:var(--mute);margin:6px 0 20px}
+
+/* services */
+.svc{display:grid;gap:10px}
+@media(min-width:620px){.svc{grid-template-columns:1fr 1fr}}
+.card{display:flex;justify-content:space-between;align-items:center;gap:12px;background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:16px 18px}
+.card h3{font-size:20px}
+.card p{font-size:13px;color:var(--mute)}
+.card b{font-family:Oswald,sans-serif;font-size:26px;color:var(--gold);white-space:nowrap}
+.card b small{font-size:12px;color:var(--mute);font-family:Poppins,sans-serif;font-weight:400}
+.card.ask b{font-size:16px}
+
+/* gallery */
+.gal{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}
+@media(min-width:700px){.gal{grid-template-columns:repeat(4,1fr)}}
+.gal .ph{aspect-ratio:1/1}
+
+/* why */
+.why{display:grid;gap:10px}
+@media(min-width:620px){.why{grid-template-columns:repeat(3,1fr)}}
+.why div{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:18px}
+.why i{font-style:normal;font-size:28px}
+.why h3{font-size:19px;margin:6px 0 2px}
+.why p{font-size:13px;color:var(--mute)}
+
+/* booking */
+.book{background:linear-gradient(160deg,#1c1a14,#111);border:1px solid var(--gold);border-radius:20px;padding:22px 18px}
+.grid2{display:grid;gap:10px}
+@media(min-width:620px){.grid2{grid-template-columns:1fr 1fr}}
+label{display:block;font-size:13px;color:var(--mute);margin:8px 0 3px}
+select,input{width:100%;padding:12px 14px;border-radius:10px;border:1px solid var(--line);background:#0b0b0d;color:var(--cream);font:inherit}
+.go{margin-top:16px;width:100%;border:0;border-radius:12px;background:var(--wa);color:#fff;font:inherit;font-weight:600;font-size:16px;padding:14px;cursor:pointer}
+.note{font-size:12px;color:var(--mute);margin-top:8px;text-align:center}
+
+/* find us */
+.find{display:grid;gap:14px}
+@media(min-width:760px){.find{grid-template-columns:1fr 1.3fr}}
+.lines div{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:12px 16px;margin-bottom:8px}
+.lines b{display:block;font-size:12px;color:var(--gold);letter-spacing:1px;text-transform:uppercase}
+.map{border:0;width:100%;height:280px;border-radius:14px;filter:grayscale(.3) contrast(1.05)}
+
+footer{border-top:1px solid var(--line);text-align:center;color:var(--mute);font-size:13px;padding:22px 16px}
+
+/* sticky action bar */
+.bar{position:fixed;left:0;right:0;bottom:0;z-index:30;display:grid;grid-template-columns:1fr 1fr;gap:10px;padding:10px 12px calc(10px + env(safe-area-inset-bottom,0px));background:rgba(13,13,15,.96);border-top:1px solid var(--line)}
+.bar a{text-align:center;padding:12px 4px;border-radius:12px;font-weight:600}
+.bar .w{background:var(--wa);color:#fff}.bar .c{background:var(--gold);color:#111}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<header class="top"><div class="wrap">
+  <a class="logo" href="#top"><span class="mark">D<img src="images/logo.png" alt="" onerror="this.remove()"></span><span class="name">Dream</span></a>
+  <nav><a href="#services">Prices</a><a href="#work">Work</a><a href="#book">Book</a><a href="#find">Find us</a></nav>
+</div></header>
+
+<main id="top">
+<div class="wrap hero">
+  <!-- 4 photos: upload to /images as 1.jpg 2.jpg 3.jpg 4.jpg -->
+  <div class="collage">
+    <div class="ph c1" data-i="💈" data-t="Our salon"><img src="images/1.jpg" alt="Dream Salon" onerror="this.remove()"></div>
+    <div class="ph c2" data-i="✂️" data-t="Haircut"><img src="images/2.jpg" alt="Haircut" onerror="this.remove()"></div>
+    <div class="ph c3" data-i="🧔" data-t="Beard shape"><img src="images/3.jpg" alt="Beard shape" onerror="this.remove()"></div>
+    <div class="ph c4" data-i="💇" data-t="Styles"><img src="images/4.jpg" alt="Hair styles" onerror="this.remove()"></div>
+  </div>
+
+  <h1>Clean cut.<br><span>Bold look.</span></h1>
+  <p>Haircut, shave and beard shape in Lahore. Clean work, clear prices, no waiting around.</p>
+
+  <div class="cta">
+    <a class="btn b1" href="https://wa.me/923407242364?text=Hello%2C%20I%20want%20to%20book%20a%20slot" target="_blank" rel="noopener">💬 WhatsApp</a>
+    <a class="btn b2" href="tel:03407242364">📞 Call now</a>
+    <a class="btn b3" href="https://www.google.com/maps/search/?api=1&query=Fashion+Look+Salon+Pir+Naseer+Road+Chandia+Lahore" target="_blank" rel="noopener">📍 Directions</a>
+  </div>
+
+  <div class="facts">
+    <div><b>9 AM – 11 PM</b><span>Open every day</span></div>
+    <div><b>Rs 200</b><span>Haircut</span></div>
+    <div><b>Rs 150</b><span>Beard shape</span></div>
+  </div>
+</div>
+
+<section id="services"><div class="wrap">
+  <h2 class="h">Price list</h2>
+  <p class="sub">Clear rates. No surprises at the counter.</p>
+  <div class="svc">
+    <div class="card"><div><h3>Haircut</h3><p>Clean cut, your style</p></div><b>200 <small>Rs</small></b></div>
+    <div class="card"><div><h3>Beard shape</h3><p>Clean lines, neat finish</p></div><b>150 <small>Rs</small></b></div>
+    <!-- Add more services: copy one card line and change name and price -->
+    <div class="card ask"><div><h3>All other services</h3><p>Ask us for the price</p></div><b>Ask</b></div>
+  </div>
+</div></section>
+
+<section id="why"><div class="wrap">
+  <h2 class="h">Why Dream</h2>
+  <p class="sub">&nbsp;</p>
+  <div class="why">
+    <div><i>🕘</i><h3>Open late</h3><p>Every day until 11 PM, so you can come after work.</p></div>
+    <div><i>💰</i><h3>Fair prices</h3><p>Rates are fixed and told upfront.</p></div>
+    <div><i>📍</i><h3>Easy to find</h3><p>On Pir Naseer Road, Chandia, Lahore.</p></div>
+  </div>
+</div></section>
+
+<section id="work"><div class="wrap">
+  <h2 class="h">The work</h2>
+  <p class="sub">Styles we do every day.</p>
+  <div class="gal">
+    <div class="ph" data-i="✂️" data-t="Cut"><img src="images/5.jpg" alt="Work" onerror="this.remove()"></div>
+    <div class="ph" data-i="💇" data-t="Style"><img src="images/6.jpg" alt="Work" onerror="this.remove()"></div>
+    <div class="ph" data-i="🧔" data-t="Beard"><img src="images/7.jpg" alt="Work" onerror="this.remove()"></div>
+    <div class="ph" data-i="💈" data-t="Fade"><img src="images/8.jpg" alt="Work" onerror="this.remove()"></div>
+  </div>
+</div></section>
+
+<section id="book"><div class="wrap">
+  <div class="book">
+    <h2 class="h" style="color:var(--gold)">Book your slot</h2>
+    <p class="sub">Pick, tap, send. It lands straight in our WhatsApp.</p>
+    <div class="grid2">
+      <div><label for="srv">Service</label>
+        <select id="srv"><option>Haircut</option><option>Beard shape</option><option>Haircut + Beard shape</option><option>Other</option></select></div>
+      <div><label for="day">Day</label>
+        <select id="day"><option>Today</option><option>Tomorrow</option></select></div>
+      <div><label for="tm">Time</label>
+        <select id="tm"><option>Morning</option><option>Afternoon</option><option>Evening</option><option>Night</option></select></div>
+      <div><label for="nm">Your name</label>
+        <input id="nm" type="text" placeholder="Type your name" autocomplete="name"></div>
+    </div>
+    <button class="go" type="button" onclick="sendBook()">Send on WhatsApp</button>
+    <p class="note">Your slot is confirmed when we reply.</p>
+  </div>
+</div></section>
+
+<section id="find"><div class="wrap">
+  <h2 class="h">Find us</h2>
+  <p class="sub">Pir Naseer Road, Chandia, Lahore</p>
+  <div class="find">
+    <div class="lines">
+      <div><b>Address</b>Dream Salon, Pir Naseer Road, Chandia, Lahore</div>
+      <div><b>Open</b>Every day, 9 AM to 11 PM</div>
+      <div><b>Phone / WhatsApp</b><a href="tel:03407242364">0340 7242364</a></div>
+    </div>
+    <iframe class="map" loading="lazy" title="Map" src="https://maps.google.com/maps?q=Pir+Naseer+Road+Chandia+Lahore&output=embed"></iframe>
+  </div>
+</div></section>
+</main>
+
+<footer>© Dream Salon, Lahore</footer>
+
+<nav class="bar">
+  <a class="w" href="https://wa.me/923407242364?text=Hello%2C%20I%20want%20to%20book%20a%20slot" target="_blank" rel="noopener">💬 WhatsApp</a>
+  <a class="c" href="tel:03407242364">📞 Call</a>
+</nav>
+
+<script>
+function sendBook(){
+  var g=function(id){return document.getElementById(id).value};
+  var name=g('nm').trim();
+  if(!name){document.getElementById('nm').focus();alert('Please type your name first');return;}
+  var msg='Hello, my name is '+name+'.\nService: '+g('srv')+'\nDay: '+g('day')+'\nTime: '+g('tm')+'\nPlease confirm my slot.';
+  window.open('https://wa.me/923407242364?text='+encodeURIComponent(msg),'_blank');
+}
+</script>
+</body>
+</html>
